@@ -1,0 +1,61 @@
+/*
+自动完成插件
+*/
+.autocompleter {
+  position: absolute;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 10000;
+  top: 100%;
+  width: 100%;
+  left: -1px;
+  background: #fff;
+  list-style: none;
+  border: 1px solid #c8e6de;
+  display: none
+}
+
+.autocompleter-closed {
+  display: none
+}
+
+.autocompleter-show {
+  display: block;
+}
+
+.autocompleter li {
+  display: block;
+  text-decoration: none;
+  color: #9e9e9e;
+  padding: 0 15px;
+  line-height: 40px;
+  overflow: hidden;
+  -moz-transition: background-color 0.2s ease-out, color 0.1s ease-out;
+  -webkit-transition: background-color 0.2s ease-out, color 0.1s ease-out;
+  -ms-transition: background-color 0.2s ease-out, color 0.1s ease-out;
+  transition: background-color 0.2s ease-out, color 0.1s ease-out;
+}
+
+.autocompleter li a {
+  color: #555
+}
+
+.autocompleter li a i {
+  color: #48cfad;
+  font-family: "georgia";
+  font-size: 20px;
+}
+
+.autocompleter li.autocompleter-item-selected {
+  background: #48cfad;
+  color: #fff;
+}
+
+.autocompleter li:hover {
+  background: #48cfad;
+  color: #fff;
+}
+
+.autocompleter li:hover a, .autocompleter li:hover a i, .autocompleter li.autocompleter-item-selected a, .autocompleter li.autocompleter-item-selected a i {
+  color: #fff
+}

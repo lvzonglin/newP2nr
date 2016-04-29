@@ -1,0 +1,129 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+.table-row-variant(@state;@background){
+  .nr-table > thead > tr,
+  .nr-table > tbody > tr,
+  .nr-table > tbody > tr{
+    >td.@{state},
+    >th.@{state},
+    &.@{state} > td,
+    &.@{state} > td{
+      background: @background;
+    }
+  }
+
+  .nr-table-hover > tbody > tr{
+    > td.@{state}:hover,
+    > th.@{state}:hover,
+    &.@{state}:hover > td,
+    &:hover > .@{state},
+    &.@{state}:hover > th {
+      background-color: darken(@background, 5%);
+    }
+  }
+}
+
+table{
+  background-color: transparent;
+}
+caption{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777;
+  text-align: left;
+}
+th{
+  text-align: left;
+}
+.nr-table{
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @line-height-computed;
+  >thead,
+  >tbody,
+  >tfoot{
+    >tr{
+      >th,
+      >td{
+        padding: 8px;
+        line-height: @line-height-base;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
+      }
+    }
+  }
+
+  >thead>tr>th{
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+  }
+
+  >caption + thead,
+  >color-profile + thead,
+  >thead:first-child{
+    >tr:first-child{
+      >th,
+      >td{
+        border-top: 0;
+      }
+    }
+  }
+
+  >tbody + tbody {
+    border-top: 2px solid #ddd;
+  }
+}
+
+.nr-table-condensed{
+  >thead,
+  >tbody,
+  >tfoot{
+    >tr{
+      >th,
+      >td{
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.nr-table-bordered{
+  border:1px solid #ddd;
+  >thead,
+  >tbody,
+  >tfoot{
+    >tr{
+      >th,
+      >td{
+        border: 1px solid #ddd;
+      }
+    }
+  }
+  >thead > tr{
+    >th,
+    >td{
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.nr-table-striped{
+  >tbody > tr:nth-of-type(odd){
+    background-color: #f9f9f9;
+  }
+}
+
+.nr-table-hover{
+  >tbody > tr:hover{
+    background-color: #f5f5f5;
+  }
+}
+
+.table-row-variant(active;#dff0d8);
+.table-row-variant(success; #d0e9c6);
+.table-row-variant(info; #d9edf7);
+.table-row-variant(warning; #c4e3f3);
+.table-row-variant(danger; #fcf8e3);

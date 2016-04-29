@@ -1,0 +1,65 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+//动画
+.nr-animation{
+  animation-duration: 0.6s;
+  animation-fill-mode: both
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0)
+  }
+  100% {
+    opacity: 1;
+    transform: none
+  }
+}
+.nr-animation-fadeInDown {
+  animation-name: fadeInDown
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0)
+  }
+}
+.nr-animation-fadeOutDown {
+  animation-name: fadeOutDown
+}
+
+@keyframes flash {
+  0%, 100%, 50% {
+    opacity: 1
+  }
+  25%, 75% {
+    opacity: 0
+  }
+}
+.nr-animation-flash {
+  animation-name: flash
+}
+
+@keyframes shake{
+  0%,100%{
+    transform: translate3d(0,0,0);
+  }
+  10%,30%,50%,70%,90%{
+    transform: translate3d(-10px,0,0);
+  }
+  20%,40%,60%,80%{
+    transform: translate3d(10px,0,0);
+  }
+}
+.nr-animation-shake{
+  animation-name: shake;
+}

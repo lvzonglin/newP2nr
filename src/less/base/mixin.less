@@ -1,0 +1,152 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+.clearfix(){
+  &:after{
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+    content:".";
+  }
+}
+
+.text-overflow(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bg-color-function(@color){
+  background-color: @color;
+  a&:hover,
+  a&:focus {
+    background-color: darken(@color, 10%);
+  }
+}
+
+
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.input-size(@input-height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+  height: @input-height;
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+
+  select& {
+    height: @input-height;
+    line-height: @input-height;
+  }
+
+  textarea&,
+  select[multiple]& {
+    height: auto;
+  }
+}
+
+.button-variant(@color; @background; @border){
+  color:@color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &:focus{
+    color: @color;
+    background-color: darken(@background,10%);
+    border-color:darken(@border,25%);
+  }
+
+  &:hover{
+    color:@color;
+    background-color: darken(@background,10%);
+    border-color:darken(@border,12%);
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 10%);
+    border-color: darken(@border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: darken(@background, 17%);
+      border-color: darken(@border, 25%);
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+.user-select(@select){
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+          user-select: @select;
+}
+
+.opacity(@opacity){
+  opacity: @opacity;
+  @opacity-ie:(@opacity*100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+
+
+.box-sizing(@boxmodel){
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+.box-shadow(@shadow){
+  -webkit-box-shadow: @shadow;
+          box-sizing: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+

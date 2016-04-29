@@ -1,0 +1,355 @@
+.form-control-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5) {
+  .nr-help-block,
+  .nr-control-label,
+  .nr-radio,
+  .nr-checkbox,
+  .nr-radio-inline,
+  .nr-checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label  {
+    color: @text-color;
+  }
+
+  .nr-form-field {
+    border-color: @border-color;
+    //.box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken(@border-color, 10%);
+      //@shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@border-color, 20%);
+      //.box-shadow(@shadow);
+    }
+  }
+
+  .input-group-addon {
+    color: @text-color;
+    border-color: @border-color;
+    background-color: @background-color;
+  }
+
+  .form-control-feedback {
+    color: @text-color;
+  }
+}
+
+fieldset {
+  border: none;
+}
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+// See https://github.com/twbs/bootstrap/issues/8350 for more.
+
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    height: auto;
+  }
+}
+
+// Adjust output element
+output {
+  display: block;
+  padding-top: (@padding-base-vertical + 1);
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  vertical-align: middle;
+}
+
+/* Common form controls */
+
+.nr-form select,
+.nr-form textarea,
+.nr-form input[type="text"],
+.nr-form input[type="password"],
+.nr-form input[type="datetime"],
+.nr-form input[type="datetime-local"],
+.nr-form input[type="date"],
+.nr-form input[type="month"],
+.nr-form input[type="time"],
+.nr-form input[type="week"],
+.nr-form input[type="number"],
+.nr-form input[type="email"],
+.nr-form input[type="url"],
+.nr-form input[type="search"],
+.nr-form input[type="tel"],
+.nr-form input[type="color"],
+.nr-form-field {
+  display: block;
+  width: 100%;
+  height: @input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @input-color;
+  background-color: @input-bg;
+  border: 1px solid @input-border;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 0;
+    border-color: @input-border-focus;
+  }
+
+  &::placeholder {
+    color: @input-color-placeholder;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+
+  &[disabled],
+  &[readonly]{
+    cursor: not-allowed;
+    background-color: @input-bg-disabled;
+  }
+}
+
+.nr-form-help {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: @gray-light;
+  font-size: 12px;
+}
+
+.nr-form-group {
+  margin-bottom: 15px;
+}
+
+.nr-form-file {
+  position: relative;
+  overflow: hidden;
+
+  input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.nr-radio,
+.nr-checkbox {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: middle;
+  label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+
+.nr-radio input[type="radio"],
+.nr-radio-inline input[type="radio"],
+.nr-checkbox input[type="checkbox"],
+.nr-checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+  outline: none;
+}
+
+.nr-radio-inline,
+.nr-checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+.nr-radio,
+.nr-radio-inline,
+.nr-checkbox,
+.nr-checkbox-inline {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+.nr-form-warning {
+  .form-control-validation(@state-warning-text; @state-warning-text);
+}
+
+.nr-form-error {
+  .form-control-validation(@state-danger-text; @state-danger-text);
+}
+
+.nr-form-error .nr-form-field,
+.nr-field-error {
+  .form-control-validation(@state-danger-text; @state-danger-text);
+}
+
+.nr-form-success {
+  .form-control-validation(@state-success-text; @state-success-text);
+}
+
+.nr-form-success .nr-form-field,
+.nr-field-valid {
+  .form-control-validation(@state-success-text; @state-success-text);
+}
+
+.nr-form-horizontal {
+  .nr-form-label,
+  .nr-radio,
+  .nr-checkbox,
+  .nr-radio-inline,
+  .nr-checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.6em;
+  }
+
+  .nr-form-group {
+    .clearfix();
+  }
+
+  .nr-form-label{
+    text-align: right;
+  }
+}
+
+.nr-form-inline{
+  .nr-form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .nr-form-field {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .nr-input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .nr-input-group-label,
+    .nr-input-group-btn,
+    .nr-form-label {
+      width: auto;
+    }
+  }
+
+  .nr-input-group > .nr-form-field {
+    width: 100%;
+  }
+
+  .nr-form-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .nr-radio,
+  .nr-checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    vertical-align: middle;
+  }
+
+  .nr-radio input[type="radio"],
+  .nr-checkbox input[type="checkbox"] {
+    float: none;
+    margin-left: 0;
+  }
+}
+
+.nr-form-group-lg {
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 7px;
+  }
+}
+
+.nr-form-icon {
+  position: relative;
+
+  .nr-form-field {
+
+  }
+
+  .nr-icon{
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    display: block;
+    margin-top: -0.5em;
+    line-height: 1;
+    z-index: 2;
+  }
+  label ~ [class*='nr-icon'] {
+    top: 70%;
+  }
+}
+
+.nr-form-feedback {
+  position: relative;
+
+  .nr-form-field {
+    //padding-left: @input-padding !important;
+    //padding-right: @input-padding + 1.25 !important;
+  }
+
+  [class*='nr-icon-'] {
+    //right: @input-padding;
+    left: auto;
+
+    .nr-form-horizontal & {
+      //right: @input-padding + 1.1;
+    }
+  }
+}

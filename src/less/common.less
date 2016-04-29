@@ -1,0 +1,133 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+
+.g-top-bar{  height: 45px; line-height: 45px;}
+.nr-header{
+  padding: 25px 0;
+  background-color: #fff;
+  .clearfix
+}
+.nr-header-logo{
+  float: left;
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: 400;
+  margin: 0;
+  position: relative;
+}
+.nr-header-nav{
+  clear: none;
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  li{
+    float:left;
+    margin-left: 25px;
+    a{
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #404040;
+    }
+    a.active{
+      color: #fff;
+      background-color: #0000ed;
+    }
+  }
+}
+.nr-project{
+  .clearfix();
+  margin-left: -30px;
+  li{
+    position: relative;
+    float: left;
+    width: 240px;
+    height: 315px;
+    margin:0 30px 20px 0;
+    overflow: hidden;
+  }
+  li.nr-project-hover{
+    .nr-project-progress,
+    .nr-project-details{
+      display: block;
+    }
+  }
+}
+.nr-project-img{
+  height: 215px!important;
+}
+.nr-project-cnt{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #fff;
+
+  .nr-project-hover &{
+    //height: 150px;
+  }
+
+ /* .nr-project-progress,
+  .nr-project-details{
+    display: none;
+  }*/
+}
+.nr-project-data{
+  height: 42px;
+}
+.nr-project-data-rate,
+.nr-project-data-amount,
+.nr-project-data-time{
+  float: left;
+  font-size: 12px;
+  dt{
+    margin-top: 6px;
+    color: #808080;
+    font-weight: normal;
+  }
+}
+.nr-project-data-rate{
+  width: 56px;
+  border-right: 1px dashed #ededee;
+  dd{
+    color: #f74b53;
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+.nr-project-data-amount{
+  width: 90px;
+  padding: 0 15px;
+  border-right: 1px dashed #ededee;
+}
+.nr-project-data-time{
+  width: 54px;
+  padding: 0 0 0 15px;
+}
+.nr-project-progress{
+  margin-top: 20px;
+}
+.nr-project-fixbg{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 10px;
+  background-color: #fff;
+}
+.nr-project-details{
+  margin-top: 20px;
+  color: #808080;
+  font-size: 12px;
+}
+.nr-project-details-auth{
+  float: right;
+  i{
+    padding-right: 5px;
+  }
+}
+.j-stickup-fixed{position: fixed!important;top: 0;z-index: 10;}
+

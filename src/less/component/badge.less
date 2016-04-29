@@ -1,0 +1,59 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+.nr-badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 2px 4px;
+  font-size: 12px;
+  color: #fff;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #999999;
+
+  &:empty {
+    display: none;
+  }
+
+  &.nr-square {
+    border-radius: 0;
+  }
+
+  &.nr-radius {
+    border-radius: 2px;
+  }
+
+}
+
+a.nr-badge {
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.nr-badge-primary {
+  background-color: #0e90d2;
+}
+
+.nr-badge-secondary {
+  background-color: #3bb4f2;
+}
+
+.nr-badge-success {
+  background-color: #5eb95e;
+}
+
+.nr-badge-warning {
+  background-color: #F37B1D;
+}
+
+.nr-badge-danger {
+  background-color: #dd514c;
+}

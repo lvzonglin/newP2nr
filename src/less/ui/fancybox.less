@@ -1,0 +1,46 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+#galpop-wrapper {
+  background:url("../image/overlay-bg.png") repeat scroll 0 0;
+}
+#galpop-container {
+  padding:10px;
+  background-color:rgb(255, 255, 255);
+  background-color:rgba(255, 255, 255, 0.3);
+  background-image:url("../image/ajax-loader.gif");
+  background-repeat:no-repeat;
+  background-position:center;
+}
+#galpop-info {background-color: rgb(0, 0, 0);background-color: rgba(0, 0, 0, .8);color:#fff;font-size:.8em; padding:10px;left:0;bottom:0;}
+#galpop-close {top:-30px;right:-30px;width:36px;height:36px;background-image:url("../image/btn-close.png");background-repeat:no-repeat;}
+.lock-scroll {overflow: hidden !important;}
+#galpop-wrapper {display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1001;}
+#galpop-container {
+  position:absolute;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height:100px;
+  width:100px;
+  overflow: visible !important;
+}
+#galpop-content {position:relative;}
+#galpop-content img {
+  vertical-align:top;
+  display:none;
+  max-width: 100%;
+  max-height:100%;
+}
+#galpop-info {position:absolute;display:none;z-index:15;}
+#galpop-info p {margin:0;}
+#galpop-info a {color:#fff;}
+#galpop-prev,#galpop-next {position:absolute;top:0;bottom:0;z-index:5;background-repeat:no-repeat;outline:none;}
+#galpop-prev {left:0;right:50%;}
+#galpop-next {left:50%;right:0;}
+#galpop-prev:hover {background-image:url("../image/btn-prev.png");background-position:left center;}
+#galpop-next:hover {background-image:url("../image/btn-next.png");background-position:right center;}
+#galpop-close {position:absolute;display:block;z-index:10;}
+

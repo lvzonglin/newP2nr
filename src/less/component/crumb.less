@@ -1,0 +1,24 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+//面包屑导航
+.nr-crumb{
+ // padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    float: left;
+    + li:before{
+      content: "\3E";
+      padding: 0 5px;
+      color: #ccc;
+    }
+  }
+}
+

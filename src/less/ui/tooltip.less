@@ -1,0 +1,97 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+#hint{
+  display: none;
+}
+.nr-tooltip{
+  position: absolute;
+  z-index: 1000;
+  display: block;
+  font-size: 12px;
+  //.opacity(0);
+
+  &.in{.opacity(.9);}
+
+  &.top{padding:5px 0;}
+  &.right{padding: 0 5px;}
+  &.bottom{padding: 5px 0;}
+  &.left{padding: 0 5px;}
+}
+
+.nr-tooltip-inner{
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+}
+
+.nr-tooltip-arrow{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.nr-tooltip{
+  &.top .nr-tooltip-arrow{
+    bottom:0;
+    left:50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  &.top-left .nr-tooltip-arrow{
+    bottom:0;
+    right:5px;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  &.top-right .nr-tooltip-arrow{
+    bottom:0;
+    left:5px;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+  }
+  &.right .nr-tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #000;
+  }
+  &.left .nr-tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #000;
+  }
+  &.bottom .nr-tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+  &.bottom-left .nr-tooltip-arrow {
+    top: 0;
+    right: 5px;
+    margin-top: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+  &.bottom-right .nr-tooltip-arrow {
+    top: 0;
+    left: 5px;
+    margin-top: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #000;
+  }
+}

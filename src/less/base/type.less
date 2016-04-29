@@ -1,0 +1,195 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+.text-color-function(@color){
+  color: @color;
+  a&:hover,
+  a&:focus{
+    color:darken(@color,10%);
+  }
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6{
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  small,
+  .small{
+    font-weight: normal;
+    line-height: 1;
+    color: @gray-light;
+  }
+}
+h1,.h1,
+h2,.h2,
+h3,.h3{
+  margin-top: @line-height-computed;
+  margin-bottom: (@line-height-computed/2);
+
+  small,
+  .small{
+    font-size: 65%;
+  }
+}
+
+h4,.h4,
+h5,.h5,
+h6,.h6{
+  margin-top: (@line-height-computed/2);
+  margin-bottom: (@line-height-computed/2);
+
+  small,
+  .small{
+    font-size: 75%;
+  }
+}
+
+h1,.h1{font-size: 36px;}
+h2,.h2{font-size: 30px;}
+h3,.h3{font-size: 24px;}
+h4,.h4{font-size: 18px;}
+h5,.h5{font-size: 14px;}
+h6,.h6{font-size: 12px;}
+
+p{
+  margin: 0 0 (@line-height-computed/2);
+}
+
+small,
+.small{
+  font-size: 85%;
+}
+
+mark,
+.mark{
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+.nr-text-left{text-align: left;}
+.nr-text-right{text-align: right;}
+.nr-text-center{text-align: center;}
+.nr-text-justify{text-align: justify;}
+.nr-text-nowrap{white-space: nowrap;}
+
+.nr-text-lowercase{text-transform: lowercase;}
+.nr-text-uppercae{text-transform: uppercase;}
+.nr-text-capitalize{text-transform: capitalize;}
+
+
+.nr-text-muted{
+  .text-color-function(@gray-light);
+}
+.nr-text-primary{
+  .text-color-function(@brand-primary);
+}
+.nr-text-success{
+  .text-color-function(@state-success-text);
+}
+.nr-text-info{
+  .text-color-function(@state-info-text);
+}
+.nr-text-warning {
+  .text-color-function(@state-warning-text);
+}
+.nr-text-danger {
+  .text-color-function(@state-danger-text);
+}
+
+
+.nr-bg-primary{
+  color:#fff;
+  .bg-color-function(@brand-primary);
+}
+.nr-bg-success{
+  .bg-color-function(@state-success-bg);
+}
+.nr-bg-info {
+  .bg-color-function(@state-info-bg);
+}
+.nr-bg-warning {
+  .bg-color-function(@state-warning-bg);
+}
+.nr-bg-danger {
+  .bg-color-function(@state-danger-bg);
+}
+
+.nr-list-unstyled{
+  padding-left: 0;
+  list-style: none;
+}
+
+.nr-list-inline{
+  .nr-list-unstyled();
+  margin-left:-5px;
+
+  >li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+dl{margin-top: 0;}
+dt,dd{
+  line-height: @line-height-base;
+}
+dd{
+  margin-left: 0;
+}
+
+.nr-dl-horizontal dt{
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nr-dl-horizontal dd{
+  margin-left: 180px;
+}
+abbr[title],
+abbr[data-original-title]{
+  cursor: help;
+  border-bottom: 1px dotted @gray-light;
+}
+
+blockquote{
+  padding: (@line-height-computed/2) @line-height-computed;
+  margin: 0 0 @line-height-computed;
+  font-size: @font-size-base;
+  border-left:5px solid @gray-lighter;
+  
+  p,
+  ul,
+  ol{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  
+  footer,
+  small,
+  .small{
+    display: block;
+    font-size: 80%;
+    line-height: @line-height-base;
+    color:@gray-light;
+    
+    &:before{
+      content: '\2014 \00A0';
+
+    }
+  }
+}
+
+address{
+  margin-bottom: @line-height-computed;
+  font-style: normal;
+  line-height: @line-height-base;
+}

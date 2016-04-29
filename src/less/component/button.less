@@ -1,0 +1,146 @@
+/*!
+ * P2NR v1.0.0 (http://www.p2nr.com)
+ * Copyright 2015-2016 CDDAKA, Inc.
+ * EMAIL:515124651@qq.com
+ */
+//按钮样式
+.nr-button-size(@padding-vertical;@padding-horizontal;@font-size;@line-height;@border-radius:2px){
+  padding:@padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+.nr-btn{
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: background-color 300ms ease-out, border-color 300ms ease-out;
+  .nr-button-size(@padding-base-vertical;@padding-base-horizontal;@font-size-base;@line-height-base);
+  .user-select(none);
+
+  &,
+  &:active,
+  &.active{
+    &:focus,
+    &.focus{
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus{
+    color: @btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active{
+    outline:0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+    .opacity(0.65);
+  }
+
+  a& {
+    &.disabled,
+    fieldset[disabled] & {
+      pointer-events: none;
+    }
+  }
+}
+.nr-btn-default{
+  .button-variant(@btn-default-color;@btn-default-bg;@btn-default-border);
+}
+.nr-btn-primary{
+  .button-variant(@btn-primary-color;@btn-primary-bg;@btn-primary-border);
+}
+.nr-btn-success{
+  .button-variant(@btn-success-color;@btn-success-bg;@btn-success-border);
+}
+.nr-btn-info{
+  .button-variant(@btn-info-color;@btn-info-bg;@btn-info-border);
+}
+.nr-btn-warning{
+  .button-variant(@btn-warning-color;@btn-warning-bg;@btn-warning-border);
+}
+.nr-btn-danger{
+  .button-variant(@btn-danger-color;@btn-danger-bg;@btn-default-border);
+}
+
+.nr-btn-link{
+  color: @link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active{
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus{
+    color: @link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus{
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.nr-btn-lg{
+  .nr-button-size(@padding-large-vertical;@padding-large-horizontal;@font-size-large;@line-height-large);
+}
+.btn-sm {
+  .nr-button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small);
+}
+.btn-xs {
+  .nr-button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small);
+}
+
+.nr-btn-block {
+  display: block;
+  width: 100%;
+}
+
+.nr-btn-block + .nr-btn-block {
+  margin-top: 5px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.nr-btn-block {
+    width: 100%;
+  }
+}
